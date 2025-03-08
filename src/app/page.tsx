@@ -36,28 +36,28 @@ export default function UsagePage() {
         {/* Step 1: 設定 */}
         <Link href="/setting" className="block w-full">
           <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold px-6 py-4 rounded-lg shadow-md hover:opacity-90 transition">
-            🔑 1️⃣ APIキーの設定
+            🔑 APIキーの設定
           </button>
         </Link>
 
         {/* Step 2: 保存 */}
         <Link href="/store" className="block w-full mt-4">
           <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold px-6 py-4 rounded-lg shadow-md hover:opacity-90 transition">
-            📂 2️⃣ Pinecone にデータを保存
+            📥 Pinecone にデータを保存
           </button>
         </Link>
 
         {/* Step 3: 検索 */}
         <Link href="/ask" className="block w-full mt-4">
           <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold px-6 py-4 rounded-lg shadow-md hover:opacity-90 transition">
-            💡 3️⃣ Together AI に質問する
+            🔎 Together AI に質問する
           </button>
         </Link>
       </section>
 
       {/* 🎉 まとめ */}
-      <section className="mt-8 p-6 bg-gray-50 shadow-md rounded-lg text-center">
-        <h2 className="text-3xl font-bold text-purple-700">🎉 すぐに AI 検索を始めよう！</h2>
+      <section className="mt-8 p-6 text-center">
+        <h2 className="text-3xl font-bold text-purple-700">🎉 今すぐにAI検索を始めよう！</h2>
       </section>
     </div>
   );

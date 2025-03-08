@@ -40,13 +40,16 @@ export default function AskPage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-12 p-8 bg-gray-50 shadow-lg rounded-xl">
-      <h1 className="text-4xl font-extrabold text-purple-700 mb-8 text-center">
-        💡 Together AIに質問する
+    <div className="max-w-3xl mx-auto mt-10 p-6 bg-white">
+      <h1 className="text-4xl font-bold text-purple-700 mb-6 text-center">
+        🔎 Together AIに質問する
       </h1>
 
-      <div className="flex flex-col gap-6">
-        {/* Larger Input Field */}
+      {/* ❓ 質問入力 */}
+      <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-3">💬 質問を入力</h2>
+        <p className="text-gray-600 mb-4">Together AIに聞きたい質問を入力してください。</p>
+
         <input
           type="text"
           placeholder="Ask a question..."
@@ -54,45 +57,47 @@ export default function AskPage() {
           onChange={(e) => setQuestion(e.target.value)}
           className="w-full h-14 p-4 text-lg border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-purple-500 focus:outline-none"
         />
+      </section>
 
-        {/* Ask Button - Disabled when input is empty */}
+      {/* 🚀 AIに質問ボタン */}
+      <section className="mb-6 text-center">
         <button
           onClick={askAI}
-          disabled={!question.trim()} // Disable when question is empty
-          className={`w-full px-6 py-3 rounded-lg font-bold text-xl shadow-lg transition-all duration-300
+          disabled={!question.trim()}
+          className={`w-full px-6 py-5 rounded-lg font-bold text-xl shadow-lg transition-all duration-300
             ${question.trim()
               ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:opacity-90"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"}`}
         >
-          🚀 質問する
+          🔎 質問する
         </button>
-      </div>
+      </section>
 
-      {/* Display Question */}
-      {completeQuestion && (
-        <div className="mt-6 p-5 bg-white rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold text-gray-800">📌 AIへの質問</h2>
-          <p className="mt-2 text-gray-600">{completeQuestion}</p>
-        </div>
-      )}
-
-      {/* Display Answer */}
+      {/* 🤖 AIの回答 */}
       {answer && (
-        <>
-          <div className="mt-4 p-5 bg-white rounded-lg shadow-md border border-gray-300">
-            <h2 className="text-xl font-semibold text-gray-800">🤖 AIの回答</h2>
-            <p className="mt-2 text-gray-600">{answer}</p>
-          </div>
-        </>
+        <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg border border-gray-200">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-3">🤖 AIの回答</h2>
+          <p className="text-lg text-gray-600">{answer}</p>
+        </section>
       )}
 
-      {/* Display Hints */}
+      {/* 📌 AIに送った質問 */}
+      {completeQuestion && (
+        <section className="mb-6 p-6 bg-gray-50 shadow-md rounded-lg">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-3">📌 TogetherConeがAIに送った質問</h2>
+          <p className="text-lg text-gray-600">{completeQuestion}</p>
+        </section>
+      )}
+
+      {/* 💡 AI回答向上のヒント */}
       {answerComplete && (
-        <div className="mt-4 p-5 bg-white rounded-lg shadow-md border border-gray-300">
-          <h2 className="text-xl font-semibold text-gray-800">💡 回答を向上させるためのヒント</h2>
-          <p>💡 インデックスに保存するドキュメントの長さを変える</p>
-          <p>💡 回答に使用しているTogether AIのLLMモデルを変更する</p>
-        </div>
+        <section className="p-6 bg-gray-50 shadow-md rounded-lg border border-gray-200">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-3">💡 回答を向上させるためのヒント</h2>
+          <ul className="list-disc list-inside text-gray-600">
+            <li>📌 インデックスに保存するドキュメントの長さを調整する</li>
+            <li>📌 使用する Together AI の LLM モデルを変更する</li>
+          </ul>
+        </section>
       )}
     </div>
   );

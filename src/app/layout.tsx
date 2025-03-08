@@ -17,33 +17,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-3xl flex space-x-6">
             <Link
               href="/"
-              className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
+              className="text-4xl px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
-              📖 Usage
+              📖
             </Link>
             <Link
               href="/setting"
-              className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
+              className="text-4xl px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
-              🔑 Settings
+              🔑
             </Link>
             <Link
               href="/store"
-              className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
+              className="text-4xl px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
-              📂 Store in Pinecone
+              📥
             </Link>
             <Link
               href="/ask"
-              className="px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
+              className="text-4xl px-4 py-2 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-all"
             >
-              💡 Ask Together AI
+              🔎
             </Link>
           </div>
         </nav>
 
         {/* 🔹 Page Content */}
-        <main className="w-full max-w-3xl mt-20 p-6 bg-white shadow-lg rounded-lg">
+        <main className="w-full max-w-3xl my-20 p-6 bg-white shadow-lg rounded-lg">
           {children}
         </main>
       </body>
